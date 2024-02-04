@@ -4,7 +4,7 @@ const cors = require("cors");
 
 const app = express();
 app.use(cors());
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8086;
 
 const query = "SELECT name FROM sqlite_master WHERE type='table';";
 db.all(query, (err, tables) => {
