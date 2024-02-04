@@ -1,6 +1,7 @@
 const express = require("express");
 const db = require("../db/db");
 const cors = require("cors");
+const serverless = require("serverless-http");
 
 const app = express();
 app.use(cors());
@@ -61,3 +62,5 @@ app.get("/dua", (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
+module.exports.handler = serverless(app);
